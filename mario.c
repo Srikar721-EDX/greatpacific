@@ -1,5 +1,5 @@
 #include <cs50.h>
-#include <studio.h>
+#include <stdio.h>
 
 void print(char c, int n);
 
@@ -10,14 +10,13 @@ int main(void)
     {
         n = get_int("Height: ");
     } while (n < 1 || n > 8);
-    
+
     for (int i = 0; i < n; i++)
     {
-        print('', n - 1 - i);
+        print(' ', n - 1 - i);
         print('#', i + 1);
-        print('', 2);
+        print(' ', 2);
         print('#', i + 1);
-        
         printf("\n");
     }
 }
