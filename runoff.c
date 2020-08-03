@@ -86,21 +86,21 @@ int main(int argc, string argv[])
     while (true)
     {
        
-       tabulate();
+        tabulate();
        
        
-       bool won = print_winner();
-       if (won)
-       {
-           break;
-       }
+        bool won = print_winner();
+        if (won)
+        {
+            break;
+        }
        
        
-       int min = find_min();
-       bool tie = is_tie(min);
+        int min = find_min();
+        bool tie = is_tie(min);
        
        
-       if (tie)
+      if(tie)
        {
            for (int i = 0; i < candidate_count; i++)
            {
