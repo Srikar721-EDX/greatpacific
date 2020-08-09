@@ -15,7 +15,7 @@ def get_maximum_num_of_times_substring(s, sub):
             if i + len(sub) > len(s) - 1:
                 ans[i] = 1
             else:
-                    ans[i] = 1 + ans[i + len(sub)]
+                ans[i] = 1 + ans[i + len(sub)]
     return max(ans)
             
 def print_match(reader, actual):
@@ -46,3 +46,10 @@ def main():
             actual = [get_maximum_num_of_times_substring(s, seq) for seq in all_sequences]
             
         print_match(reader, actual)
+        
+        
+        
+        
+        
+if __name__ == "__main__":
+    main()
