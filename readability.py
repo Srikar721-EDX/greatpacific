@@ -13,7 +13,7 @@ for i in range(len(s)):
         
 
 L = num_letters / num_words * 100
-S = num_letters / num_words * 100
+S = num_sentences / num_words * 100
 index = round(0.0588 * L - 0.296 * S - 15.8)
 if index < 1:
     print("Before Grade 1")
