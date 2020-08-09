@@ -45,15 +45,15 @@ int main(int argc, char *argv[])
     }
 
     char filename[8];
-    FILE* outputPtr = NULL;
+    FILE *outputPtr = NULL;
     uint8_t buffer[BLOCKSIZE];
-    int jpgCounter=0;
+    int jpgCounter = 0;
 
-    while(fread(buffer, sizeof(uint8_t), BLOCKSIZE, inputPtr) || feof(inputPtr)==0)
+    while (fread(buffer, sizeof(uint8_t), BLOCKSIZE, inputPtr) || feof(inputPtr) == 0)
     {
-        if(isJpgHeader(buffer))
+        if (isJpgHeader(buffer))
         {
-            if(outputPtr!=NULL)
+            if (outputPtr != NULL)
             {
                 fclose(outputPtr);
             }
@@ -61,17 +61,17 @@ int main(int argc, char *argv[])
             outputPtr = fopen(filename, "w");
             jpgCounter++;
         }
-        if(outputPtr!=NULL)
+        if (outputPtr != NULL)
         {
             fwrite(buffer, sizeof(buffer), 1, outputPtr);
         }
     }
     
-    if(inputPtr==NULL)
+    if (inputPtr == NULL)
     {
         fclose(inputPtr);
     }
-    if(outputPtr==NULL)
+    if (outputPtr == NULL)
     {
         fclose(outputPtr);
     }
